@@ -1,0 +1,267 @@
+@page
+@model LoveLink.Pages.ProposalModel
+@{
+    ViewData["Title"] = "A Special Surprise ❤️";
+}
+
+@if (Model.Proposal == null)
+{
+    <div class="not-found">
+        <h1>😔 Proposal Not Found</h1>
+        <p>This link may be invalid or the proposal is no longer available.</p>
+        <a href="/" class="back-home">← Back to LoveLink</a>
+    </div>
+}
+else
+{
+    <div class="proposal-page">
+
+        <!-- PASSWORD SCREEN -->
+        <div id="passwordScreen" class="password-screen">
+
+            <div class="lock-heart">🔐❤️</div>
+
+            <h1>A Secret Surprise Awaits ❤️</h1>
+
+            <p>
+                This surprise was specially created for
+                <strong>@Model.Proposal.RecipientName</strong>
+            </p>
+
+            <form id="passwordForm">
+
+                <input type="password"
+                       id="passwordInput"
+                       placeholder="Enter the secret password"
+                       autocomplete="off" />
+
+                <p id="errorMessage" class="password-error"></p>
+
+                <button type="submit" class="unlock-btn">
+                    🔓 Unlock My Surprise
+                </button>
+
+            </form>
+        </div>
+
+
+        <!-- UNLOCK ANIMATION -->
+        <div id="unlockAnimation" class="unlock-animation hidden">
+
+            <div class="unlock-lock">🔓</div>
+
+            <h1>Opening your surprise...</h1>
+
+            <div class="unlock-hearts">
+                ❤️ 💕 💖 💗 ❤️
+            </div>
+
+        </div>
+
+
+        <!-- ENVELOPE SCREEN -->
+        <div id="envelopeScreen" class="envelope-screen hidden">
+
+            <div class="magic-hearts">
+                ❤️ 💕 💖 💗 💓 💕 ❤️
+            </div>
+
+            <h1>Just For You... ❤️</h1>
+
+            <p>You have a special letter waiting for you</p>
+
+            <div id="envelope" class="envelope">
+
+                <div class="envelope-back"></div>
+
+                <div class="envelope-letter-preview">
+                    <span>💌</span>
+                    <p>A special message...</p>
+                </div>
+
+                <div class="envelope-flap"></div>
+
+                <div class="heart-seal">❤️</div>
+
+            </div>
+
+            <p class="click-envelope">
+                Click the envelope to open your surprise 💌
+            </p>
+
+        </div>
+
+
+        <!-- FULL LETTER -->
+        <div id="letterScreen" class="letter-screen hidden">
+
+            <div class="floating-hearts">
+                ❤️ 💕 💖 💗 💓 ❤️ 💕
+            </div>
+
+            <div class="letter-box">
+
+                <div class="heart-big">❤️</div>
+
+                <h1>@Model.Proposal.Title</h1>
+
+                <h2>Dear @Model.Proposal.RecipientName ❤️</h2>
+
+                <div class="letter-text">
+                    @Model.Proposal.Letter
+                </div>
+
+                <p class="from-name">
+                    With all my heart,<br />
+                    <strong>@Model.Proposal.YourName ❤️</strong>
+                </p>
+
+                <div class="question-box">
+
+                    <h2>Will You Be Mine Forever? ❤️</h2>
+
+                    <div class="proposal-buttons">
+
+                        <button id="yesButton" class="yes-btn">
+                            YES ❤️
+                        </button>
+
+                        <button id="noButton" class="no-btn">
+                            NO 🙈
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CELEBRATION -->
+            <div id="successMessage" class="success-message hidden">
+
+                <div class="celebration">
+                    🎉 ❤️ 🎊 💖 ✨
+                </div>
+
+                <h1>YAYYYY! ❤️</h1>
+
+                <h2>This is the beginning of something beautiful!</h2>
+
+                <p>
+                    May your story be filled with love,
+                    happiness and beautiful memories. 💕
+                </p>
+
+            </div>
+
+
+            <a href="/Create" class="create-own">
+                💌 Create Your Own Surprise
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const correctPassword = "@Model.Proposal.Password";
+
+        const passwordForm =
+            document.getElementById("passwordForm");
+
+        passwordForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const enteredPassword =
+                document.getElementById("passwordInput").value;
+
+            if (enteredPassword === correctPassword) {
+
+                // Hide password screen
+                document.getElementById("passwordScreen")
+                    .classList.add("hidden");
+
+                // Show unlock animation
+                document.getElementById("unlockAnimation")
+                    .classList.remove("hidden");
+
+                // After animation, show envelope
+                setTimeout(function () {
+
+                    document.getElementById("unlockAnimation")
+                        .classList.add("hidden");
+
+                    document.getElementById("envelopeScreen")
+                        .classList.remove("hidden");
+
+                }, 2500);
+
+            } else {
+
+                document.getElementById("errorMessage").textContent =
+                    "❌ Incorrect password. Try again ❤️";
+            }
+
+        });
+
+
+        // OPEN ENVELOPE
+        document.getElementById("envelope")
+            .addEventListener("click", function () {
+
+                const envelope =
+                    document.getElementById("envelope");
+
+                envelope.classList.add("opening");
+
+                setTimeout(function () {
+
+                    document.getElementById("envelopeScreen")
+                        .classList.add("hidden");
+
+                    document.getElementById("letterScreen")
+                        .classList.remove("hidden");
+
+                }, 1200);
+
+            });
+
+
+        // YES BUTTON
+        document.getElementById("yesButton")
+            .addEventListener("click", function () {
+
+                document.getElementById("successMessage")
+                    .classList.remove("hidden");
+
+                document.getElementById("successMessage")
+                    .scrollIntoView({
+                        behavior: "smooth"
+                    });
+
+            });
+
+
+        // RUNNING NO BUTTON
+        const noButton =
+            document.getElementById("noButton");
+
+        noButton.addEventListener("mouseenter", function () {
+
+            const randomX =
+                Math.floor(Math.random() * 180) - 90;
+
+            const randomY =
+                Math.floor(Math.random() * 120) - 60;
+
+            noButton.style.transform =
+                `translate(${randomX}px, ${randomY}px)`;
+
+        });
+
+    </script>
+}

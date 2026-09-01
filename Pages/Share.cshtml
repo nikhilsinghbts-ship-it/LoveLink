@@ -1,0 +1,49 @@
+@page
+@model LoveLink.Pages.ShareModel
+@{
+    ViewData["Title"] = "Your Secret Link";
+}
+
+<div class="share-page">
+
+    <div class="share-box">
+
+        <div class="success-icon">🎉</div>
+
+        <h1>Your Secret Proposal Is Ready!</h1>
+
+        <p>
+            Your special surprise has been created successfully.
+            Copy the link below and send it to someone special ❤️
+        </p>
+
+        <div class="link-box">
+            <input id="proposalLink"
+                   type="text"
+                   value="@Model.ProposalLink"
+                   readonly />
+
+            <button onclick="copyLink()">📋 Copy</button>
+        </div>
+
+        <p class="small-text">
+            🔐 The receiver will need the secret password you created.
+        </p>
+
+        <a href="/Create" class="new-proposal">
+            💌 Create Another Proposal
+        </a>
+
+    </div>
+
+</div>
+
+<script>
+    function copyLink() {
+        const link = document.getElementById("proposalLink");
+
+        navigator.clipboard.writeText(link.value);
+
+        alert("Link copied successfully! ❤️");
+    }
+</script>

@@ -1,0 +1,79 @@
+@page
+@model LoveLink.Pages.CreateModel
+@{
+    ViewData["Title"] = "Create Your Proposal";
+}
+
+<div class="create-page">
+
+    <div class="create-box">
+
+        <h1>💌 Create Your Secret Proposal</h1>
+
+        <p class="subtitle">
+            Create something beautiful for someone special ❤️
+        </p>
+
+        <form method="post">
+
+            <div class="form-group">
+                <label>Your Name</label>
+                <input type="text"
+                       name="YourName"
+                       placeholder="Enter your name"
+                       required />
+            </div>
+
+            <div class="form-group">
+                <label>Special Person's Name</label>
+                <input type="text"
+                       name="RecipientName"
+                       placeholder="Enter their name"
+                       required />
+            </div>
+
+            <div class="form-group">
+                <label>Proposal Title</label>
+                <input type="text"
+                       name="Title"
+                       placeholder="For example: A Message From My Heart ❤️"
+                       required />
+            </div>
+
+            <div class="form-group">
+                <label>Your Romantic Letter 💕</label>
+                <textarea name="Letter"
+                          rows="7"
+                          placeholder="Write your special message here..."
+                          required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Secret Password 🔐</label>
+                <input type="password"
+                       name="Password"
+                       placeholder="Set a secret password"
+                       required />
+            </div>
+
+            <div class="form-group">
+                <label>Choose a Theme 🎨</label>
+
+                <select name="Theme">
+                    <option value="pink">Pink Romance 💕</option>
+                    <option value="red">Classic Love ❤️</option>
+                    <option value="dark">Dark Romance 🌙</option>
+                </select>
+            </div>
+
+            <button type="submit" class="create-submit">
+                ✨ Create My Secret Link
+            </button>
+
+        </form>
+
+        <a href="/" class="back-home">← Back to Home</a>
+
+    </div>
+
+</div>
