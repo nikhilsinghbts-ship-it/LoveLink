@@ -1,853 +1,681 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #1a0010, #4b0028, #8b0045);
-    color: white;
-}
-
-.hero {
-    min-height: 100vh;
-    text-align: center;
-    padding: 70px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.hearts {
-    font-size: 35px;
-    margin-bottom: 20px;
-    animation: floating 2s infinite alternate;
-}
-
-h1 {
-    font-size: 70px;
-    margin: 0;
-}
-
-h2 {
-    font-size: 28px;
-    font-weight: normal;
-    margin-top: 15px;
-}
-
-.hero > p {
-    max-width: 650px;
-    font-size: 18px;
-    line-height: 1.7;
-    color: #ffd6e7;
-}
-
-.buttons {
-    margin-top: 25px;
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.btn {
-    text-decoration: none;
-    padding: 16px 28px;
-    border-radius: 50px;
-    font-size: 17px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.create-btn {
-    background: #ff2f75;
-    color: white;
-}
-
-.open-btn {
-    background: white;
-    color: #8b0045;
-}
-
-.btn:hover {
-    transform: scale(1.08);
-}
-
-.features {
-    margin-top: 65px;
-    display: flex;
-    gap: 25px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.feature {
-    width: 220px;
-    padding: 25px;
-    background: rgba(255, 255, 255, 0.12);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    font-size: 30px;
-}
-
-.feature h3 {
-    font-size: 22px;
-    margin: 10px 0;
-}
-
-.feature p {
-    font-size: 14px;
-    color: #ffd6e7;
-}
-.footer {
-    display: none !important;
-}
-
-.border-top {
-    border-top: none !important;
-}
-@keyframes floating {
-    from {
-        transform: translateY(-8px);
-    }
-
-    to {
-        transform: translateY(8px);
-    }
-}
-
-@media (max-width: 600px) {
-    h1 {
-        font-size: 48px;
-    }
-
-    h2 {
-        font-size: 22px;
-    }
-}
-/* =========================
-   CREATE PROPOSAL PAGE
-========================= */
-
-.create-page {
-    min-height: 100vh;
-    padding: 50px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.create-box {
-    width: 100%;
-    max-width: 700px;
-    padding: 40px;
-    border-radius: 25px;
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(15px);
-}
-
-.create-box h1 {
-    text-align: center;
-    font-size: 38px;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    text-align: center;
-    color: #ffd6e7;
-    margin-bottom: 35px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    font-weight: bold;
-    margin-bottom: 8px;
-    font-size: 16px;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    outline: none;
-}
-
-.form-group textarea {
-    resize: vertical;
-}
-
-.create-submit {
-    width: 100%;
-    padding: 16px;
-    border: none;
-    border-radius: 50px;
-    background: #ff2f75;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.create-submit:hover {
-    transform: scale(1.03);
-}
-
-.back-home {
-    display: block;
-    text-align: center;
-    margin-top: 25px;
-    color: white;
-    text-decoration: none;
-}
-
-.back-home:hover {
-    color: #ff9fbd;
-}
-/* SHARE PAGE */
-
-.share-page {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-}
-
-.share-box {
-    width: 100%;
-    max-width: 650px;
-    padding: 50px 35px;
-    text-align: center;
-    border-radius: 25px;
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(15px);
-}
-
-.success-icon {
-    font-size: 70px;
-}
-
-.share-box h1 {
-    font-size: 35px;
-}
-
-.share-box p {
-    color: #ffd6e7;
-    line-height: 1.6;
-}
-
-.link-box {
-    display: flex;
-    margin: 30px 0;
-}
-
-.link-box input {
-    flex: 1;
-    padding: 15px;
-    border: none;
-    outline: none;
-    font-size: 15px;
-    border-radius: 10px 0 0 10px;
-}
-
-.link-box button {
-    border: none;
-    padding: 15px 20px;
-    cursor: pointer;
-    font-weight: bold;
-    background: #ff2f75;
-    color: white;
-    border-radius: 0 10px 10px 0;
-}
-
-.small-text {
-    font-size: 14px;
-}
-
-.new-proposal {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 14px 25px;
-    background: white;
-    color: #8b0045;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-}
-
-@media (max-width: 600px) {
-    .link-box {
-        flex-direction: column;
-    }
-
-    .link-box input {
-        border-radius: 10px;
-        margin-bottom: 10px;
-    }
-
-    .link-box button {
-        border-radius: 10px;
-    }
-}
-/* =========================
-   PROPOSAL PAGE
-========================= */
-
-.hidden {
-    display: none !important;
-}
+/* =========================================================
+   💖 LOVELINK - PREMIUM ROMANTIC PROPOSAL EXPERIENCE
+========================================================= */
 
 .proposal-page {
     min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
 }
 
-/* PASSWORD SCREEN */
+/* =========================================================
+   PASSWORD SCREEN
+========================================================= */
 
 .password-screen {
+    position: relative;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-    padding: 30px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 50% 20%, rgba(255, 50, 120, .25), transparent 35%),
+        linear-gradient(135deg, #14000d, #39001f, #720038, #24000f);
 }
 
-.lock-icon {
-    font-size: 80px;
-    margin-bottom: 20px;
-    animation: lockFloat 2s infinite alternate;
+.password-screen::before,
+.envelope-screen::before,
+.letter-screen::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,.7) 1px, transparent 1px);
+    background-size: 55px 55px;
+    opacity: .12;
+    animation: starMove 15s linear infinite;
+}
+
+.lock-heart {
+    position: relative;
+    z-index: 2;
+    font-size: 100px;
+    filter: drop-shadow(0 0 25px rgba(255, 50, 120, .8));
+    animation:
+        lockFloat 2s ease-in-out infinite alternate,
+        heartbeat 1.5s infinite;
+}
+
+.mini-stars {
+    margin-top: 10px;
+    color: #ffb5d0;
+    font-size: 20px;
+    letter-spacing: 10px;
+    animation: sparkle 2s infinite;
 }
 
 .password-screen h1 {
-    font-size: 45px;
-    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+    margin-top: 15px;
+    font-size: clamp(38px, 6vw, 62px);
+    font-weight: 800;
+    background: linear-gradient(90deg, #fff, #ffb1ce, #fff);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shineText 4s linear infinite;
 }
 
-.password-screen p {
-    color: #ffd6e7;
-    font-size: 18px;
+.password-screen > p {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
 }
 
-.password-screen form {
-    width: 100%;
-    max-width: 400px;
-    margin-top: 25px;
+.password-input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 18px;
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 50px;
+    box-shadow: 0 10px 40px rgba(0,0,0,.25);
+    backdrop-filter: blur(15px);
+}
+
+.password-input-wrap span {
+    font-size: 22px;
 }
 
 .password-screen input {
-    width: 100%;
-    padding: 16px;
+    background: transparent;
+    color: white;
     border: none;
-    outline: none;
-    border-radius: 50px;
+}
 
-    font-size: 17px;
-    text-align: center;
+.password-screen input::placeholder {
+    color: #ffc5d8;
 }
 
 .unlock-btn {
-    width: 100%;
-    margin-top: 15px;
-    padding: 16px;
-
-    border: none;
-    border-radius: 50px;
-
-    background: #ff2f75;
-    color: white;
-
-    font-size: 17px;
-    font-weight: bold;
-
-    cursor: pointer;
-    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        0 10px 30px rgba(255, 47, 117, .35),
+        0 0 25px rgba(255, 47, 117, .2);
 }
 
-.unlock-btn:hover {
-    transform: scale(1.05);
+.unlock-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.5),
+        transparent
+    );
+    transform: skewX(-20deg);
+    animation: buttonShine 3s infinite;
 }
 
-.password-error {
-    color: #ffb6c9 !important;
-    min-height: 25px;
-}
-
-/* PROPOSAL CONTENT */
-
-.proposal-content {
-    min-height: 100vh;
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.floating-hearts {
-    font-size: 35px;
-    margin-bottom: 25px;
-    animation: heartsFloat 2s infinite alternate;
-}
-
-.letter-box {
-    width: 100%;
-    max-width: 750px;
-
-    margin: auto;
-    padding: 50px 40px;
-
-    border-radius: 30px;
-
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(15px);
-
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
-}
-
-.heart-big {
-    font-size: 65px;
-    animation: heartbeat 1.2s infinite;
-}
-
-.letter-box h1 {
-    font-size: 40px;
-}
-
-.letter-box h2 {
-    margin-top: 30px;
-}
-
-.letter-text {
+.secret-note {
+    position: relative;
+    z-index: 2;
     margin-top: 25px;
-    padding: 25px;
-
-    text-align: left;
-
-    font-size: 18px;
-    line-height: 1.8;
-
-    color: #fff0f5;
-
-    white-space: pre-line;
-
-    background: rgba(0, 0, 0, 0.12);
-
-    border-radius: 20px;
+    color: #ffbad0;
+    font-size: 13px;
+    letter-spacing: 1px;
 }
 
-.from-name {
-    margin-top: 30px;
-    font-size: 18px;
-    color: #ffd6e7;
-}
+/* =========================================================
+   UNLOCK
+========================================================= */
 
-.question-box {
-    margin-top: 40px;
-}
-
-.proposal-buttons {
-    margin-top: 25px;
-
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-}
-
-.yes-btn,
-.no-btn {
-    padding: 15px 35px;
-
-    border: none;
-    border-radius: 50px;
-
-    font-size: 18px;
-    font-weight: bold;
-
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.yes-btn {
-    background: #ff2f75;
-    color: white;
-}
-
-.yes-btn:hover {
-    transform: scale(1.15);
-}
-
-.no-btn {
-    background: white;
-    color: #8b0045;
-}
-
-/* SUCCESS MESSAGE */
-
-.success-message {
-    width: 100%;
-    max-width: 750px;
-
-    margin: 40px auto;
-    padding: 45px 30px;
-
-    border-radius: 30px;
-
-    background: rgba(255, 255, 255, 0.15);
-}
-
-.celebration {
-    font-size: 55px;
-}
-
-.create-own {
-    display: inline-block;
-
-    margin-top: 40px;
-    padding: 15px 30px;
-
-    border-radius: 50px;
-
-    background: white;
-    color: #8b0045;
-
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* ANIMATIONS */
-
-@keyframes heartbeat {
-
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.2);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes heartsFloat {
-
-    from {
-        transform: translateY(-8px);
-    }
-
-    to {
-        transform: translateY(8px);
-    }
-}
-
-@keyframes lockFloat {
-
-    from {
-        transform: translateY(-10px);
-    }
-
-    to {
-        transform: translateY(10px);
-    }
-}
-
-/* MOBILE */
-
-@media (max-width: 600px) {
-
-    .password-screen h1 {
-        font-size: 32px;
-    }
-
-    .letter-box {
-        padding: 35px 20px;
-    }
-
-    .letter-box h1 {
-        font-size: 30px;
-    }
-
-    .letter-text {
-        font-size: 16px;
-        padding: 18px;
-    }
-
-    .proposal-buttons {
-        gap: 15px;
-    }
-
-    .yes-btn,
-    .no-btn {
-        padding: 14px 22px;
-    }
-}
-/* =========================
-   ENVELOPE ANIMATION
-========================= */
-
-.unlock-animation,
-.envelope-screen {
+.unlock-animation {
+    position: relative;
     min-height: 100vh;
-    padding: 40px 20px;
+    background:
+        radial-gradient(circle, rgba(255, 30, 110, .3), transparent 40%),
+        linear-gradient(135deg, #15000d, #510029, #17000e);
+    overflow: hidden;
+}
 
+.magic-circle {
+    width: 180px;
+    height: 180px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    text-align: center;
-}
-
-.unlock-animation h1,
-.envelope-screen h1 {
-    font-size: 40px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,.5);
+    box-shadow:
+        0 0 20px #ff2f75,
+        inset 0 0 30px rgba(255,47,117,.4);
+    animation: rotateCircle 5s linear infinite;
 }
 
 .unlock-lock {
     font-size: 100px;
-    animation: unlockPop 1.5s ease-in-out infinite;
+    animation: unlockPop 1.4s ease-in-out infinite;
+}
+
+.unlock-animation h1 {
+    margin-top: 35px;
+    font-size: clamp(30px, 5vw, 48px);
+}
+
+.unlock-animation p {
+    color: #ffd6e7;
+    font-size: 18px;
 }
 
 .unlock-hearts {
     margin-top: 30px;
     font-size: 35px;
-    animation: heartsFloat 1s infinite alternate;
+    letter-spacing: 8px;
+    animation: heartsFloat 1.2s infinite alternate;
 }
 
-@keyframes unlockPop {
-    0% {
-        transform: scale(0.8) rotate(-10deg);
-        opacity: 0.5;
-    }
+/* =========================================================
+   ENVELOPE
+========================================================= */
 
-    50% {
-        transform: scale(1.3) rotate(10deg);
-        opacity: 1;
-    }
-
-    100% {
-        transform: scale(0.8) rotate(-10deg);
-        opacity: 0.5;
-    }
+.envelope-screen {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at center, rgba(255,100,160,.25), transparent 35%),
+        linear-gradient(135deg, #21000f, #61002f, #270011);
 }
 
-
-/* MAGIC ENVELOPE SCREEN */
-
-.magic-hearts {
-    font-size: 35px;
-    margin-bottom: 20px;
-    animation: heartsFloat 2s infinite alternate;
+.little-label {
+    position: relative;
+    z-index: 2;
+    font-size: 12px;
+    letter-spacing: 5px;
+    color: #ffb8d1;
+    margin-top: 10px;
 }
 
-.envelope-screen p {
-    color: #ffd6e7;
-    font-size: 18px;
+.envelope-screen h1 {
+    position: relative;
+    z-index: 2;
+    font-size: clamp(40px, 6vw, 65px);
+    margin: 10px 0;
+}
+
+.envelope-subtitle {
+    position: relative;
+    z-index: 2;
 }
 
 .envelope {
-    position: relative;
-
-    width: 360px;
-    height: 240px;
-
-    margin-top: 40px;
-
-    cursor: pointer;
-
-    transition: transform 0.5s;
-
-    filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.4));
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    filter:
+        drop-shadow(0 30px 30px rgba(0,0,0,.5))
+        drop-shadow(0 0 30px rgba(255,50,120,.2));
 }
 
-.envelope:hover {
-    transform: scale(1.05);
+.envelope-glow {
+    position: absolute;
+    inset: -30px;
+    border-radius: 50%;
+    background: rgba(255,47,117,.2);
+    filter: blur(30px);
+    z-index: -1;
+    animation: envelopeGlow 2s infinite alternate;
 }
-
-
-/* BACK OF ENVELOPE */
 
 .envelope-back {
-    position: absolute;
-
-    width: 100%;
-    height: 100%;
-
-    border-radius: 8px;
-
     background:
-        linear-gradient(
-            135deg,
-            #f8d6c0,
-            #e9a982
-        );
-
-    overflow: hidden;
+        linear-gradient(135deg, #ffd7c8, #ed9d7c);
+    border-radius: 10px;
 }
 
-
-/* LETTER PREVIEW */
-
-.envelope-letter-preview {
+.envelope-back::after {
+    content: "";
     position: absolute;
-
-    width: 85%;
-    height: 75%;
-
-    left: 7.5%;
-    top: 12%;
-
-    background: #fff7f0;
-
-    color: #7d2547;
-
-    border-radius: 5px;
-
-    z-index: 2;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    transition: all 1s ease;
+    inset: 0;
+    background:
+        linear-gradient(45deg, transparent 49%, rgba(150,50,50,.15) 50%, transparent 51%),
+        linear-gradient(-45deg, transparent 49%, rgba(150,50,50,.15) 50%, transparent 51%);
 }
 
-.envelope-letter-preview span {
-    font-size: 45px;
+.envelope-front {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60%;
+    background: #e89b7a;
+    clip-path: polygon(0 0, 50% 65%, 100% 0, 100% 100%, 0 100%);
+    z-index: 3;
 }
-
-.envelope-letter-preview p {
-    color: #7d2547;
-    font-style: italic;
-}
-
-
-/* ENVELOPE FLAP */
 
 .envelope-flap {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 0;
-    height: 0;
-
-    border-left: 180px solid transparent;
-    border-right: 180px solid transparent;
-    border-top: 130px solid #f1b899;
-
-    z-index: 4;
-
-    transform-origin: top;
-
-    transition: transform 1s ease;
+    border-top-color: #f3b391;
+    filter: drop-shadow(0 5px 5px rgba(0,0,0,.1));
 }
 
+.envelope-letter-preview {
+    box-shadow: 0 10px 20px rgba(0,0,0,.15);
+}
 
-/* HEART SEAL */
+.preview-heart {
+    font-size: 50px;
+    animation: heartbeat 1.5s infinite;
+}
 
 .heart-seal {
-    position: absolute;
-
-    top: 95px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 65px;
-    height: 65px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 50%;
-
-    background: #d80b48;
-
-    font-size: 30px;
-
-    z-index: 5;
-
     box-shadow:
-        0 0 20px #ff4d85;
-
-    transition: all 0.8s ease;
-}
-
-
-/* OPENING ANIMATION */
-
-.envelope.opening .envelope-flap {
-    transform: rotateX(180deg);
-    z-index: 1;
-}
-
-.envelope.opening .heart-seal {
-    transform:
-        translateX(-50%)
-        scale(0);
-
-    opacity: 0;
-}
-
-.envelope.opening .envelope-letter-preview {
-    transform: translateY(-130px);
-    z-index: 6;
+        0 0 15px #ff4d85,
+        0 0 35px rgba(255,77,133,.5);
+    animation: sealPulse 1.5s infinite;
 }
 
 .click-envelope {
-    margin-top: 35px;
-    animation: clickPulse 1.5s infinite;
+    position: relative;
+    z-index: 5;
+    font-size: 16px !important;
+    color: #ffd1df !important;
+    letter-spacing: .5px;
 }
 
-@keyframes clickPulse {
+/* =========================================================
+   LETTER
+========================================================= */
 
+.letter-screen {
+    position: relative;
+    min-height: 100vh;
+    padding: 80px 20px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 50% 10%, rgba(255,80,140,.25), transparent 30%),
+        linear-gradient(135deg, #18000d, #4e0027, #19000d);
+}
+
+.letter-box {
+    position: relative;
+    z-index: 5;
+    border: 1px solid rgba(255,255,255,.2);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.16),
+            rgba(255,255,255,.06)
+        );
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.45),
+        0 0 50px rgba(255,40,110,.12),
+        inset 0 1px rgba(255,255,255,.25);
+}
+
+.letter-top-decoration {
+    color: #ff9fbe;
+    font-size: 14px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.heart-big {
+    filter: drop-shadow(0 0 20px rgba(255,50,120,.5));
+}
+
+.letter-label {
+    margin-top: 15px;
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: #ffabc6;
+}
+
+.letter-box h1 {
+    margin-top: 10px;
+    background: linear-gradient(90deg, #fff, #ffb2cc, #fff);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shineText 4s linear infinite;
+}
+
+.dear-line {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #ffd6e7;
+}
+
+.letter-divider {
+    margin: 25px 0;
+    color: #ff8fb5;
+    font-size: 25px;
+}
+
+.letter-text {
+    border: 1px solid rgba(255,255,255,.1);
+    background: rgba(0,0,0,.15);
+    box-shadow: inset 0 0 30px rgba(255,50,120,.04);
+}
+
+.question-box {
+    position: relative;
+    overflow: hidden;
+    padding: 40px 25px;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 25px;
+    background:
+        radial-gradient(circle at center, rgba(255,47,117,.2), transparent 65%),
+        rgba(0,0,0,.12);
+}
+
+.question-heart {
+    font-size: 45px;
+    animation: heartbeat 1.3s infinite;
+}
+
+.question-small {
+    margin-top: 10px;
+    color: #ffabc5;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.question-box h2 {
+    font-size: clamp(26px, 5vw, 40px);
+    font-weight: 700;
+}
+
+.question-subtitle {
+    color: #ffc3d5;
+    font-size: 14px;
+}
+
+.yes-btn {
+    min-width: 150px;
+    box-shadow:
+        0 10px 30px rgba(255,47,117,.35),
+        0 0 20px rgba(255,47,117,.25);
+}
+
+.no-btn {
+    min-width: 150px;
+    position: relative;
+}
+
+/* =========================================================
+   FALLING HEARTS
+========================================================= */
+
+.falling-hearts {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.falling-hearts span {
+    position: absolute;
+    top: -60px;
+    font-size: 20px;
+    animation: fallingHeart 9s linear infinite;
+    opacity: .6;
+}
+
+.falling-hearts span:nth-child(1) { left: 8%; animation-delay: 0s; }
+.falling-hearts span:nth-child(2) { left: 20%; animation-delay: 2s; }
+.falling-hearts span:nth-child(3) { left: 35%; animation-delay: 4s; }
+.falling-hearts span:nth-child(4) { left: 50%; animation-delay: 1s; }
+.falling-hearts span:nth-child(5) { left: 65%; animation-delay: 5s; }
+.falling-hearts span:nth-child(6) { left: 75%; animation-delay: 3s; }
+.falling-hearts span:nth-child(7) { left: 88%; animation-delay: 6s; }
+.falling-hearts span:nth-child(8) { left: 95%; animation-delay: 7s; }
+
+/* =========================================================
+   SUCCESS
+========================================================= */
+
+.success-message {
+    position: relative;
+    z-index: 10;
+    border: 1px solid rgba(255,255,255,.2);
+    background:
+        radial-gradient(circle at center, rgba(255,70,130,.3), transparent 65%),
+        rgba(255,255,255,.1);
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.4),
+        0 0 60px rgba(255,50,120,.25);
+    animation: successAppear 1s ease forwards;
+}
+
+.success-heart {
+    font-size: 80px;
+    animation: heartbeat .9s infinite;
+}
+
+.success-message h1 {
+    font-size: clamp(45px, 8vw, 75px);
+    background: linear-gradient(90deg, #fff, #ff8fb5, #fff);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shineText 3s linear infinite;
+}
+
+.success-message h2 {
+    font-size: 25px;
+}
+
+.love-forever {
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 50px;
+    background: rgba(255,255,255,.08);
+    color: #ffd2df;
+    font-style: italic;
+}
+
+.big-hearts {
+    margin-top: 25px;
+    font-size: 28px;
+    letter-spacing: 8px;
+}
+
+/* =========================================================
+   HEART EXPLOSION
+========================================================= */
+
+.explosion-heart {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+    font-size: 25px;
+    animation: heartExplosion 2.5s ease-out forwards;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes starMove {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(55px);
+    }
+}
+
+@keyframes shineText {
     0% {
-        transform: scale(1);
-        opacity: 0.7;
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 200%;
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: .4;
+        transform: scale(.9);
     }
 
     50% {
-        transform: scale(1.08);
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes buttonShine {
+    0% {
+        left: -100%;
+    }
+
+    50%, 100% {
+        left: 150%;
+    }
+}
+
+@keyframes rotateCircle {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes envelopeGlow {
+    from {
+        transform: scale(.8);
+        opacity: .4;
+    }
+
+    to {
+        transform: scale(1.2);
+        opacity: .8;
+    }
+}
+
+@keyframes sealPulse {
+    0%, 100% {
+        box-shadow:
+            0 0 15px #ff4d85,
+            0 0 25px rgba(255,77,133,.3);
+    }
+
+    50% {
+        box-shadow:
+            0 0 25px #ff4d85,
+            0 0 50px rgba(255,77,133,.6);
+    }
+}
+
+@keyframes fallingHeart {
+    0% {
+        transform:
+            translateY(-50px)
+            rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: .7;
+    }
+
+    90% {
+        opacity: .5;
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes successAppear {
+    from {
+        opacity: 0;
+        transform: scale(.7) translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes heartExplosion {
+    0% {
+        transform:
+            translate(-50%, -50%)
+            scale(.5)
+            rotate(0deg);
         opacity: 1;
     }
 
     100% {
-        transform: scale(1);
-        opacity: 0.7;
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(1.4)
+            rotate(360deg);
+        opacity: 0;
     }
 }
 
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
 
-/* IMPROVED PASSWORD LOCK */
+    25% {
+        transform: translateX(-10px);
+    }
 
-.lock-heart {
-    font-size: 85px;
-
-    animation:
-        lockFloat 2s infinite alternate,
-        heartbeat 1.5s infinite;
+    75% {
+        transform: translateX(10px);
+    }
 }
 
+.shake {
+    animation: shake .5s ease;
+}
 
-/* MOBILE */
+/* =========================================================
+   MOBILE
+========================================================= */
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
+
+    .password-screen {
+        padding: 25px 18px;
+    }
+
+    .lock-heart {
+        font-size: 75px;
+    }
+
+    .password-screen h1 {
+        font-size: 34px;
+    }
+
+    .password-screen > p {
+        font-size: 16px;
+    }
 
     .envelope {
         width: 300px;
@@ -862,10 +690,50 @@ h2 {
 
     .heart-seal {
         top: 75px;
+        width: 58px;
+        height: 58px;
     }
 
-    .unlock-animation h1,
-    .envelope-screen h1 {
-        font-size: 30px;
+    .letter-screen {
+        padding: 50px 12px;
+    }
+
+    .letter-box {
+        padding: 35px 18px;
+        border-radius: 22px;
+    }
+
+    .letter-text {
+        font-size: 16px;
+        line-height: 1.8;
+        padding: 18px;
+    }
+
+    .proposal-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .yes-btn,
+    .no-btn {
+        width: 85%;
+    }
+
+    .question-box {
+        padding: 30px 15px;
+    }
+
+    .success-message {
+        margin: 30px 10px;
+        padding: 35px 20px;
+    }
+
+    .success-message h2 {
+        font-size: 20px;
+    }
+
+    .big-hearts {
+        font-size: 20px;
+        letter-spacing: 3px;
     }
 }

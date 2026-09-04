@@ -21,19 +21,25 @@ else
 
             <div class="lock-heart">🔐❤️</div>
 
-            <h1>A Secret Surprise Awaits ❤️</h1>
+            <div class="mini-stars">✦ ✧ ✦ ✧ ✦</div>
+
+            <h1>A Secret Surprise Awaits</h1>
 
             <p>
-                This surprise was specially created for
-                <strong>@Model.Proposal.RecipientName</strong>
+                Something special has been created just for
+                <strong>@Model.Proposal.RecipientName</strong> ❤️
             </p>
 
             <form id="passwordForm">
 
-                <input type="password"
-                       id="passwordInput"
-                       placeholder="Enter the secret password"
-                       autocomplete="off" />
+                <div class="password-input-wrap">
+                    <span>🔑</span>
+
+                    <input type="password"
+                           id="passwordInput"
+                           placeholder="Enter your secret password"
+                           autocomplete="off" />
+                </div>
 
                 <p id="errorMessage" class="password-error"></p>
 
@@ -42,18 +48,27 @@ else
                 </button>
 
             </form>
+
+            <div class="secret-note">
+                ✨ A little secret is waiting behind this lock ✨
+            </div>
+
         </div>
 
 
         <!-- UNLOCK ANIMATION -->
         <div id="unlockAnimation" class="unlock-animation hidden">
 
-            <div class="unlock-lock">🔓</div>
+            <div class="magic-circle">
+                <div class="unlock-lock">🔓</div>
+            </div>
 
-            <h1>Opening your surprise...</h1>
+            <h1>Unlocking your surprise...</h1>
+
+            <p>Something beautiful is about to begin ❤️</p>
 
             <div class="unlock-hearts">
-                ❤️ 💕 💖 💗 ❤️
+                ❤️ 💕 💖 💗 💓 💞 ❤️
             </div>
 
         </div>
@@ -63,30 +78,43 @@ else
         <div id="envelopeScreen" class="envelope-screen hidden">
 
             <div class="magic-hearts">
-                ❤️ 💕 💖 💗 💓 💕 ❤️
+                ✦ ❤️ ✦ 💕 ✦ 💖 ✦ ❤️ ✦
             </div>
+
+            <span class="little-label">A MESSAGE FOR YOU</span>
 
             <h1>Just For You... ❤️</h1>
 
-            <p>You have a special letter waiting for you</p>
+            <p class="envelope-subtitle">
+                Someone has something special to tell you.
+            </p>
 
             <div id="envelope" class="envelope">
+
+                <div class="envelope-glow"></div>
 
                 <div class="envelope-back"></div>
 
                 <div class="envelope-letter-preview">
-                    <span>💌</span>
-                    <p>A special message...</p>
+
+                    <div class="preview-heart">💌</div>
+
+                    <p>Open me...</p>
+
                 </div>
 
                 <div class="envelope-flap"></div>
 
-                <div class="heart-seal">❤️</div>
+                <div class="envelope-front"></div>
+
+                <div class="heart-seal">
+                    ❤️
+                </div>
 
             </div>
 
             <p class="click-envelope">
-                Click the envelope to open your surprise 💌
+                👆 Tap the envelope to open your heart
             </p>
 
         </div>
@@ -95,20 +123,47 @@ else
         <!-- FULL LETTER -->
         <div id="letterScreen" class="letter-screen hidden">
 
-            <div class="floating-hearts">
-                ❤️ 💕 💖 💗 💓 ❤️ 💕
+            <div class="falling-hearts">
+                <span>❤️</span>
+                <span>💕</span>
+                <span>💖</span>
+                <span>💗</span>
+                <span>💓</span>
+                <span>💞</span>
+                <span>❤️</span>
+                <span>💕</span>
             </div>
 
             <div class="letter-box">
 
-                <div class="heart-big">❤️</div>
+                <div class="letter-top-decoration">
+                    ✦ ───── ❤️ ───── ✦
+                </div>
+
+                <div class="heart-big">
+                    ❤️
+                </div>
+
+                <div class="letter-label">
+                    A LETTER FROM THE HEART
+                </div>
 
                 <h1>@Model.Proposal.Title</h1>
 
-                <h2>Dear @Model.Proposal.RecipientName ❤️</h2>
+                <div class="dear-line">
+                    Dear <strong>@Model.Proposal.RecipientName</strong> ❤️
+                </div>
+
+                <div class="letter-divider">
+                    ♡
+                </div>
 
                 <div class="letter-text">
                     @Model.Proposal.Letter
+                </div>
+
+                <div class="letter-divider">
+                    ♡
                 </div>
 
                 <p class="from-name">
@@ -116,18 +171,34 @@ else
                     <strong>@Model.Proposal.YourName ❤️</strong>
                 </p>
 
+
+                <!-- QUESTION -->
                 <div class="question-box">
 
-                    <h2>Will You Be Mine Forever? ❤️</h2>
+                    <div class="question-heart">
+                        💖
+                    </div>
+
+                    <p class="question-small">
+                        And now... I have one little question
+                    </p>
+
+                    <h2>
+                        Will You Be Mine Forever? ❤️
+                    </h2>
+
+                    <p class="question-subtitle">
+                        No pressure... just follow your heart. 🥹💕
+                    </p>
 
                     <div class="proposal-buttons">
 
                         <button id="yesButton" class="yes-btn">
-                            YES ❤️
+                            <span>YES</span> ❤️
                         </button>
 
                         <button id="noButton" class="no-btn">
-                            NO 🙈
+                            Maybe... 🙈
                         </button>
 
                     </div>
@@ -141,23 +212,39 @@ else
             <div id="successMessage" class="success-message hidden">
 
                 <div class="celebration">
-                    🎉 ❤️ 🎊 💖 ✨
+                    🎉 💖 ✨ ❤️ ✨ 💖 🎉
+                </div>
+
+                <div class="success-heart">
+                    💕
                 </div>
 
                 <h1>YAYYYY! ❤️</h1>
 
-                <h2>This is the beginning of something beautiful!</h2>
+                <h2>
+                    You just made two hearts very happy! 🥹
+                </h2>
 
                 <p>
-                    May your story be filled with love,
-                    happiness and beautiful memories. 💕
+                    This is the beginning of something beautiful.
+                    May your journey together be filled with
+                    love, laughter, happiness and countless
+                    unforgettable memories. 💕
                 </p>
+
+                <div class="love-forever">
+                    ❤️ Together is my favourite place to be ❤️
+                </div>
+
+                <div class="big-hearts">
+                    💖 💕 💗 💓 💕 💖
+                </div>
 
             </div>
 
 
             <a href="/Create" class="create-own">
-                💌 Create Your Own Surprise
+                💌 Create Your Own Love Story
             </a>
 
         </div>
@@ -179,17 +266,19 @@ else
             const enteredPassword =
                 document.getElementById("passwordInput").value;
 
+            const errorMessage =
+                document.getElementById("errorMessage");
+
             if (enteredPassword === correctPassword) {
 
-                // Hide password screen
+                errorMessage.textContent = "";
+
                 document.getElementById("passwordScreen")
                     .classList.add("hidden");
 
-                // Show unlock animation
                 document.getElementById("unlockAnimation")
                     .classList.remove("hidden");
 
-                // After animation, show envelope
                 setTimeout(function () {
 
                     document.getElementById("unlockAnimation")
@@ -198,18 +287,31 @@ else
                     document.getElementById("envelopeScreen")
                         .classList.remove("hidden");
 
-                }, 2500);
+                }, 3000);
 
-            } else {
+            }
+            else {
 
-                document.getElementById("errorMessage").textContent =
-                    "❌ Incorrect password. Try again ❤️";
+                errorMessage.textContent =
+                    "❌ That's not the secret password... try again ❤️";
+
+                document.getElementById("passwordInput")
+                    .classList.add("shake");
+
+                setTimeout(function () {
+
+                    document.getElementById("passwordInput")
+                        .classList.remove("shake");
+
+                }, 500);
+
             }
 
         });
 
 
         // OPEN ENVELOPE
+
         document.getElementById("envelope")
             .addEventListener("click", function () {
 
@@ -226,42 +328,145 @@ else
                     document.getElementById("letterScreen")
                         .classList.remove("hidden");
 
-                }, 1200);
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+
+                }, 1600);
 
             });
 
 
         // YES BUTTON
+
         document.getElementById("yesButton")
             .addEventListener("click", function () {
 
                 document.getElementById("successMessage")
                     .classList.remove("hidden");
 
-                document.getElementById("successMessage")
-                    .scrollIntoView({
-                        behavior: "smooth"
-                    });
+                createHeartExplosion();
+
+                setTimeout(function () {
+
+                    document.getElementById("successMessage")
+                        .scrollIntoView({
+                            behavior: "smooth",
+                            block: "center"
+                        });
+
+                }, 100);
 
             });
 
 
-        // RUNNING NO BUTTON
+        // RUNNING / SHY NO BUTTON
+
         const noButton =
             document.getElementById("noButton");
 
+        const noMessages = [
+            "Maybe... 🙈",
+            "Are you sure? 🥺",
+            "Think again ❤️",
+            "Don't break my heart 😭",
+            "Give love a chance 💕",
+            "Really? 🥹",
+            "One more thought? 💖"
+        ];
+
+        let noCount = 0;
+
         noButton.addEventListener("mouseenter", function () {
 
-            const randomX =
-                Math.floor(Math.random() * 180) - 90;
+            if (window.innerWidth > 600) {
 
-            const randomY =
-                Math.floor(Math.random() * 120) - 60;
+                const randomX =
+                    Math.floor(Math.random() * 260) - 130;
 
-            noButton.style.transform =
-                `translate(${randomX}px, ${randomY}px)`;
+                const randomY =
+                    Math.floor(Math.random() * 160) - 80;
+
+                noButton.style.transform =
+                    `translate(${randomX}px, ${randomY}px)`;
+
+                noButton.textContent =
+                    noMessages[noCount % noMessages.length];
+
+                noCount++;
+            }
 
         });
+
+
+        noButton.addEventListener("click", function () {
+
+            if (window.innerWidth <= 600) {
+
+                noButton.textContent =
+                    noMessages[noCount % noMessages.length];
+
+                noCount++;
+
+            }
+
+        });
+
+
+        // HEART EXPLOSION
+
+        function createHeartExplosion() {
+
+            const hearts = [
+                "❤️",
+                "💕",
+                "💖",
+                "💗",
+                "💓",
+                "💞",
+                "✨"
+            ];
+
+            for (let i = 0; i < 45; i++) {
+
+                const heart =
+                    document.createElement("div");
+
+                heart.className =
+                    "explosion-heart";
+
+                heart.textContent =
+                    hearts[Math.floor(Math.random() * hearts.length)];
+
+                heart.style.left =
+                    "50%";
+
+                heart.style.top =
+                    "50%";
+
+                heart.style.setProperty(
+                    "--x",
+                    (Math.random() * 700 - 350) + "px"
+                );
+
+                heart.style.setProperty(
+                    "--y",
+                    (Math.random() * 700 - 350) + "px"
+                );
+
+                heart.style.animationDelay =
+                    (Math.random() * 0.5) + "s";
+
+                document.body.appendChild(heart);
+
+                setTimeout(function () {
+                    heart.remove();
+                }, 3000);
+
+            }
+
+        }
 
     </script>
 }
